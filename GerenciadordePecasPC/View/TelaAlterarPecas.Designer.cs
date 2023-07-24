@@ -49,6 +49,7 @@
             this.btnAlterar.TabIndex = 17;
             this.btnAlterar.Text = "Alterar os Dados";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // txtBoxCapacidade
             // 
@@ -73,7 +74,7 @@
             // 
             // txtBoxPesquisa
             // 
-            this.txtBoxPesquisa.Location = new System.Drawing.Point(39, 64);
+            this.txtBoxPesquisa.Location = new System.Drawing.Point(39, 65);
             this.txtBoxPesquisa.Name = "txtBoxPesquisa";
             this.txtBoxPesquisa.Size = new System.Drawing.Size(144, 23);
             this.txtBoxPesquisa.TabIndex = 13;

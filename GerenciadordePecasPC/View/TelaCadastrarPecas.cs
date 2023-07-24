@@ -23,7 +23,7 @@ namespace GerenciadordePecasPC.View
         {
             Pecas.Peca = txtBoxPecas.Text;
             Pecas.Marca = txtboxMarca.Text;
-            Pecas.Capacidade = txtboxMarca.Text;
+            Pecas.Capacidade = txtBoxCapacidades.Text;
             ManipulaPecas mPeca = new ManipulaPecas();
             mPeca.CadPecas();
 

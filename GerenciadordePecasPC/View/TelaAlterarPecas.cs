@@ -21,14 +21,27 @@ namespace GerenciadordePecasPC.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Pecas.Codigo = Convert.ToInt32(txtBoxPesquisa);
-            ManipulaPecas alterarPe = new ManipulaPecas();
-            alterarPe.AleterarPecas();
-
-            txtBoxPeca.Text = Convert.ToString(txtBoxPeca);
-            txtBoxMarca.Text = Pecas.Peca;
+            Pecas.Codigo = Convert.ToInt32(txtBoxPesquisa.Text);
+            txtBoxPesquisa.Text = Pecas.Codigo.ToString();
+            txtBoxPeca.Text = Pecas.Peca;
+            txtBoxMarca.Text = Pecas.Marca;
             txtBoxCapacidade.Text = Pecas.Capacidade;
 
+            
+            ManipulaPecas alterarPesquisa = new ManipulaPecas();
+            alterarPesquisa.buscarpecaCod();
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            Pecas.Codigo = Convert.ToInt32(txtBoxPesquisa.Text);
+            Pecas.Peca = txtBoxPeca.Text;
+            Pecas.Marca = txtBoxMarca.Text;
+            Pecas.Capacidade = txtBoxCapacidade.Text;
+
+            ManipulaPecas alterarPe = new ManipulaPecas();
+            alterarPe.AleterarPecas();
         }
     }
 }

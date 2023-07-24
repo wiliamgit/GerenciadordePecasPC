@@ -97,10 +97,7 @@ namespace GerenciadordePecasPC.Controller
 
            /*Tentativa de resultado, erro com codigo Ex: 404 */ try
             {
-                cmd.Parameters.AddWithValue("@idpecas", Pecas.Codigo);
-                cmd.Parameters.AddWithValue("@pecas", Pecas.Codigo);
-                cmd.Parameters.AddWithValue("@marcas", Pecas.Codigo);
-                cmd.Parameters.AddWithValue("@capacidade", Pecas.Codigo);
+                cmd.Parameters.AddWithValue("idpecas", Pecas.Codigo);
                 cn.Open();
                 cmd.ExecuteReader();
 
@@ -135,14 +132,13 @@ namespace GerenciadordePecasPC.Controller
 
             try
             {
-                /* adicionar os parametros */ cmd.Parameters.AddWithValue("idPecas", Pecas.Codigo);
-                cmd.Parameters.AddWithValue("Peca", Pecas.Codigo);
-                cmd.Parameters.AddWithValue("Marca", Pecas.Codigo);
-                cmd.Parameters.AddWithValue("Capacidade", Pecas.Codigo);
+                /* adicionar os parametros */ 
+                cmd.Parameters.AddWithValue("idPecas", Pecas.Codigo);
+                cmd.Parameters.AddWithValue("pecas", Pecas.Peca);
+                cmd.Parameters.AddWithValue("marcas", Pecas.Marca);
+                cmd.Parameters.AddWithValue("capacidades", Pecas.Capacidade);
                 cn.Open();
                 cmd.ExecuteReader();
-                var resposta = MessageBox.Show("Peça Alterada com  sucesso, Deseja alterar outra Peça?",
-                "Deleatrar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
                 MessageBox.Show("Peça alterada com Sucesso.");
                 Pecas.Codigo = 0;
